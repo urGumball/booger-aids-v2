@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty Randomizer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, #1d2b53, #000000);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(0,0,0,0.6);
+      border: 2px solid #5fd3ff;
+      border-radius: 18px;
+      padding: 30px;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 0 30px rgba(95, 211, 255, 0.3);
+    }
+    h1 {
+      margin-top: 0;
+      color: #5fd3ff;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    button {
+      margin-top: 24px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #5fd3ff, #1e90ff);
+      color: #000;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(95, 211, 255, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Rick and Morty Randomizer</h1>
+    <p id="quote">Loading a crazy quote from the multiverse...</p>
+    <button id="redirectBtn">Go to feet.md</button>
+  </div>
+  <script>
+    const quotes = [
+      "Wubba lubba dub dub! You gotta get schwifty.",
+      "Nobody exists on purpose. Nobody belongs anywhere. We’re all going to die. Come watch TV.",
+      "Sometimes science is more art than science, Morty. A lot of people don't get that.",
+      "I’m not arguing that it’s possible, I’m simply saying it’s plausible.",
+      "Listen, Morty, I hate to break it to you, but what people call ‘love’ is just a chemical reaction that compels animals to breed.",
+      "To live is to risk it all; otherwise you're just an inert chunk of randomly assembled molecules drifting wherever the universe blows you.",
+      "Nobody belongs anywhere, Morty. Everybody's gonna die, come watch TV.",
+      "Sometimes accepting who you are is more difficult than trying to become someone else."
+    ];
+    const quoteEl = document.getElementById('quote');
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteEl.textContent = randomQuote;
+
+    document.getElementById('redirectBtn').addEventListener('click', function() {
+      window.location.href = 'feet.md';
+    });
+  </script>
+</body>
+</html>
